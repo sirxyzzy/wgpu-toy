@@ -8,11 +8,6 @@ fn load_glsl_fragment(code: &str) -> Vec<u32> {
         .unwrap()
 }
 
-fn load_glsl_compute(code: &str) -> Vec<u32> {
-    wgpu::read_spirv(glsl_to_spirv::compile(&code, glsl_to_spirv::ShaderType::Compute).unwrap())
-        .unwrap()
-}
-
 fn main() {
     use winit::{
         event,
